@@ -2,10 +2,10 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 
 from config import Config
-from models.models import db
+from models import db
 
-from routes.auth_routes import auth_bp
-from routes.problem_routes import problem_bp
+from auth_routes import auth_bp
+from problem_routes import problem_bp
 
 app = Flask(__name__)
 
