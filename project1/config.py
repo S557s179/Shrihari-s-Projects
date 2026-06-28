@@ -1,6 +1,6 @@
-class Config:
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+import os
 
-    # IMPORTANT: JWT requires this exact key name
-    JWT_SECRET_KEY = 'super-secret-key'
+class Config:
+    SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "super-secret-key")
